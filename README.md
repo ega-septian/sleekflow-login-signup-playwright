@@ -93,41 +93,40 @@ Notes:
 
 ## Running Tests
 
-Run all tests:
+Run all suites:
 
 ```bash
 npm test
 ```
 
-Run tests in headed mode:
+Run the login suite:
 
 ```bash
-npm run test:headed
+npm run test:login
 ```
 
-Run tests in debug mode:
+Run the signup suite:
 
 ```bash
-npm run test:debug
+npm run test:signup
+```
+
+Run a specific test by tag:
+
+```bash
+npx playwright test --grep @LOGIN-003
+```
+
+Example:
+
+```bash
+npx playwright test --grep @SIGNUP-006
 ```
 
 Open the Playwright HTML report:
 
 ```bash
 npm run report
-```
-
-Run a specific test by tag:
-
-```bash
-npx playwright test --grep @LOGIN-001
-```
-
-Examples:
-
-```bash
-npx playwright test --grep @LOGIN-003
-npx playwright test --grep @SIGNUP-006
 ```
 
 ## GitHub Actions
