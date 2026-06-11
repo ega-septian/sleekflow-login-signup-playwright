@@ -26,12 +26,12 @@ For the signup flow, I identify and test these key elements:
 - Terms and conditions validation is displayed.
 - Empty password validation is displayed.
 - Weak password validation is displayed.
-- Successful signup direct to email confirmation page.
+- Successful signup redirects to the email confirmation page.
 
 For the login flow, I include these validation steps:
 
 - Login page opens from the homepage using the header sign-in button.
-- Login form header, email/username field, continue button, sign-up link, social buttons login option, and marketing slides are visible.
+- Login form header, email/username field, continue button, sign-up link, social login buttons, and marketing slides are visible.
 - Empty email/username submission shows a required error.
 - Valid credentials reach the inbox page.
 - Invalid password shows an error message.
