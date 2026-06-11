@@ -1,10 +1,12 @@
 {
   "name": "sleekflow-auth-e2e-playwright",
   "version": "1.0.0",
-  "description": "",
+  "description": "Playwright TypeScript automation for SleekFlow login and signup flows",
   "main": "index.js",
   "scripts": {
     "test": "playwright test",
+    "test:login": "playwright test tests/login.spec.ts",
+    "test:signup": "playwright test tests/signup.spec.ts",
     "test:headed": "playwright test --headed",
     "test:debug": "playwright test --debug",
     "report": "playwright show-report"
