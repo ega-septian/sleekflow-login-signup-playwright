@@ -4,6 +4,13 @@ End-to-end automation tests for the SleekFlow signup and login flows using Playw
 
 This project covers the main authentication scenarios requested in Part 1 of the technical assignment: project setup, page object structure, reusable fixtures, environment-based test data, login validation, signup validation, successful signup flow, and Playwright reporting artifacts.
 
+## Assignment Answers
+
+The written answers for the technical assignment are available in:
+
+- [Part 1 Technical Answers](PART_1_TECHNICAL_ANSWERS.md)
+- [Part 2 Test Case Design and Bug Report](PART_2_TEST_CASE_DESIGN_AND_BUG_REPORT.md)
+
 ## Tech Stack
 
 - Playwright
@@ -32,6 +39,8 @@ This project covers the main authentication scenarios requested in Part 1 of the
 │   ├── login.spec.ts
 │   └── signup.spec.ts
 ├── .env.example
+├── PART_1_TECHNICAL_ANSWERS.md
+├── PART_2_TEST_CASE_DESIGN_AND_BUG_REPORT.md
 ├── playwright.config.ts
 └── package.json
 ```
