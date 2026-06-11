@@ -84,12 +84,6 @@ SIGNUP_VALID_PASSWORD=your-valid-signup-password
 SIGNUP_WEAK_PASSWORD=abc
 ```
 
-Notes:
-
-- Keep `.env` local and do not commit it.
-- Commit `.env.example` only, so reviewers know which variables are required.
-- Use a real login account for `LOGIN_EMAIL` and `LOGIN_PASSWORD`.
-- Signup tests generate a new email using the `Date.now()-sleekflow@yopmail.com` format.
 
 ## Running Tests
 
@@ -190,16 +184,14 @@ Signup test cases:
 
 ## CAPTCHA Limitation
 
-SleekFlow authentication is served through a public SSO flow. During repeated automation runs, the application may show a CAPTCHA challenge based on risk signals such as IP address, browser fingerprint, traffic frequency, or failed attempts.
+SleekFlow uses a public SSO flow, so CAPTCHA may appear during repeated automation runs.
 
-CAPTCHA is intentionally not bypassed or automated in this project. This is the expected and ethical approach for an end-to-end test suite against a real public authentication system.
+CAPTCHA is not bypassed or automated in this project. If CAPTCHA appears, tests that need to continue past that step may fail even when the automation code is correct.
 
-If CAPTCHA appears, tests that need to continue past the CAPTCHA step can fail even when the automation code is correct. In a real test environment, the recommended options are:
+For stable automation, the recommended options are:
 
-- Use a dedicated test environment where CAPTCHA is disabled.
-- Allowlist automation traffic for test accounts.
-- Use backend/API test setup for accounts and reserve UI tests for validation.
-- Run CAPTCHA-sensitive tests less frequently.
+- Use a test environment where CAPTCHA is disabled.
+- Allowlist test accounts or automation traffic.
 
 ## Playwright Configuration
 
@@ -211,6 +203,7 @@ The Playwright config includes:
 - Videos retained on failure.
 - Trace collection on first retry.
 - One worker to reduce risk detection on the external SSO flow.
+- Browser scope is Chromium/Desktop Chrome only. Firefox and WebKit are intentionally not enabled for this assignment.
 - CI retry configuration.
 
 ## Reviewer Notes
@@ -219,4 +212,3 @@ The Playwright config includes:
 - Fixtures in `fixtures/pages.ts` provide reusable navigation flows from the homepage to login and signup pages.
 - Test data and generated emails are isolated in `test-data/auth.ts`.
 - Secrets are not committed; reviewers should create their own `.env` from `.env.example`.
-- Full test execution depends on the live SleekFlow/Auth0 flow, so external changes or CAPTCHA challenges can affect results.
