@@ -16,6 +16,10 @@ This project covers the main authentication scenarios requested in Part 1 of the
 
 ```text
 .
+├── .github/
+│   ├── workflows/
+│   │   └── playwright.yml
+│   └── pull_request_template.md
 ├── fixtures/
 │   └── pages.ts
 ├── pages/
@@ -116,6 +120,46 @@ Examples:
 npx playwright test --grep @LOGIN-003
 npx playwright test --grep @SIGNUP-006
 ```
+
+## GitHub Actions
+
+This project includes a GitHub Actions workflow for running Playwright tests in CI.
+
+The workflow runs on:
+
+- Manual trigger from the **Actions** tab
+- Push to the `main` branch
+- Pull request
+
+To run it manually:
+
+1. Open the repository on GitHub.
+2. Go to **Actions**.
+3. Select **Playwright Tests**.
+4. Click **Run workflow**.
+5. Choose the branch and run it.
+
+Required repository secrets:
+
+- `LOGIN_EMAIL`
+- `LOGIN_PASSWORD`
+- `INVALID_LOGIN_PASSWORD`
+- `SIGNUP_VALID_PASSWORD`
+- `SIGNUP_WEAK_PASSWORD`
+
+The Playwright HTML report is uploaded as a workflow artifact after each run.
+
+## Pull Request Template
+
+This repository includes a pull request template in `.github/pull_request_template.md`.
+
+The template helps document:
+
+- Summary of changes
+- Test evidence
+- Test scope
+- Reviewer notes
+- Screenshots or report links when relevant
 
 ## Test Coverage
 

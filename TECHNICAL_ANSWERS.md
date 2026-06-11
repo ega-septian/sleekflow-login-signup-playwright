@@ -160,7 +160,3 @@ For failed tests, the project captures debugging artifacts through Playwright co
 - Traces are captured on first retry.
 - HTML reports are generated after the run.
 - GitHub Actions uploads the Playwright report as an artifact.
-
-These artifacts help identify whether a failure is caused by a real regression, selector change, network issue, redirect issue, or CAPTCHA.
-
-CAPTCHA is not bypassed or automated. Since SleekFlow uses a public SSO flow, CAPTCHA may appear after repeated runs or based on risk signals such as IP address, browser fingerprint, or traffic frequency. In a real test environment, the recommended solution is to disable CAPTCHA for test accounts or run these tests against a dedicated test environment.
